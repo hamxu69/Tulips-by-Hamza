@@ -1,278 +1,72 @@
-@keyframes slideUp {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 520px;
-  }
-}
-@keyframes slideUp2 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 680px;
-  }
-}
-@keyframes slideUp3 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 550px;
-  }
-}
-@keyframes slideUp4 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 550px;
-  }
-}
-@keyframes slideUp5 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 550px;
-  }
-}
-@keyframes slideUp6 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 620px;
-  }
-}
-@keyframes slideUp7 {
-  0% {
-    top: 1200px;
-  }
-  100% {
-    top: 700px;
-  }
-}
 
-.leaf-left,
-.leaf-right {
-  filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.911))
-    drop-shadow(0 0 5px rgba(0, 200, 0, 0.5))
-    drop-shadow(0 0 7px rgba(50, 170, 72, 0.678));
-}
-.stem {
-  filter: drop-shadow(0 0 1px rgba(0, 255, 0, 0.6))
-    drop-shadow(0 0 2px rgba(0, 200, 0, 0.4))
-    drop-shadow(0 0 3px rgba(29, 200, 60, 0.3));
-}
-
-body {
-  background-color: black;
-  overflow: hidden; /* Prevents scrolling */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  height: 100vh; /* Ensures the body height takes up the full viewport */
-  width: 100vw; /* Ensures the body width takes up the full viewport */
-  position: fixed; /* Fixes the body in place */
-  top: 0;
-  left: 0;
-}
-
-.center-petal {
-  position: absolute;
-  bottom: -45px;
-  left: -25px;
-}
-
-.right-petal {
-  position: absolute;
-  bottom: -50px;
-  left: 3px;
-  transform: scale(1.1);
-  animation: swayr 5s ease-in-out infinite;
-}
-
-.left-petal {
-  position: absolute;
-  bottom: -50px;
-  left: 400x;
-  animation: swayl 5s ease-in-out infinite;
-}
-
-.stem {
-  position: absolute;
-  transform: scaley(2);
-}
-
-.leaf-right {
-  animation: swaylleaf 9s ease-in-out infinite;
-  position: absolute;
-  left: 60px;
-}
-.leaf-left {
-  animation: swayrleaf 9s ease-in-out infinite;
-  position: absolute;
-  left: -80px;
-}
-.container {
-  /* top: 550px; */
-  position: relative;
-  transform: scale(0.9);
-  
-}
-@keyframes swaym {
-  0% {
-    transform: rotate(0deg) translateX(0px);
-  }
-  100% {
-    transform: rotate(0deg) translateX(0px);
-  }
-}
-@keyframes swayr {
-  0% {
-    transform: rotate(0deg) translateX(0px);
-  }
-  25% {
-    transform: rotate(5deg) translateX(5px);
-  }
-  50% {
-    transform: rotate(-5deg) translateX(0px);
-  }
-  75% {
-    transform: rotate(5deg) translateX(5px);
-  }
-  100% {
-    transform: rotate(0deg) translateX(0px);
-  }
-}
-@keyframes swayrleaf {
-  0% {
-    transform: scale(1.2) rotate(20deg) translateX(30px);
-  }
-
-  50% {
-    transform: scale(1.2) rotate(-10deg) translateX(-5px);
-  }
-
-  100% {
-    transform: scale(1.2) rotate(20deg) translateX(30px);
-  }
-}
-
-@keyframes swaylleaf {
-  0% {
-    transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
-  }
-
-  50% {
-    transform: scaleX(-1) scale(1.2) rotate(-10deg) translateX(-5px);
-  }
-
-  100% {
-    transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
-  }
-}
-
-@keyframes swayl {
-  0% {
-    transform: rotate(0deg) translateX(0px);
-  }
-  25% {
-    transform: rotate(-5deg) translateX(-5px);
-  }
-  50% {
-    transform: rotate(5deg) translateX(0px);
-  }
-  75% {
-    transform: rotate(-5deg) translateX(-5px);
-  }
-  100% {
-    transform: rotate(0deg) translateX(0px);
-  }
-}
-.petalDiv {
-  position: relative;
-  top: -60px;
-  z-index: 5;
-}
-.flowerbed {
-  top: 100px;
-  left: 15px;
-  position: relative;
-  transform: scale(0.9);
-}
-
-/* give each flower a slide up and sway animation na also add glow on each flower according to its color */
-@keyframes size {
+@media (max-width: 768px) {
+  @keyframes slideUp {
     0% {
-      transform: 
-       scaleY(1.2) scaleX(1.2);
-      /* Starting position */
+      top: 1200px;
     }
     100% {
-      transform: 
-       scaleY(1.2) scaleX(1.2);
-      ; /* Ending position */
+      top: 520px;
     }
   }
-
-  @keyframes slideDiagonal {
+  @keyframes slideUp2 {
     0% {
-      transform: translateY(1000px); /* Starting position */
+      top: 1200px;
     }
     100% {
-      transform: translateY(0); /* Ending position */
+      top: 680px;
     }
   }
-  .diagonal-box {
-    top: -100px;
-    rotate: -10deg;
-    position: relative; /* Optional if not already positioned */
-    animation: slideDiagonal 4s ease-in-out ;
-  }
-  .glowing-star {
-    position: absolute; /* To allow placement within a container */
-    width: 8px; /* Star size */
-    height: 8px; /* Star size */
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%; /* Makes it circular */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Adds the glow */
-    animation: star-glow 2s infinite ease-in-out;
-  }
-  
-  .moving-dots-container {
-    position: relative;
-    background-color: black;
-    overflow: hidden;
-  }
-  
-  .glowing-dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: pink;
-    border-radius: 50%;
-    box-shadow: 0 0 10px pink;
-    animation: moveRandom 10s infinite ease-in-out;
-  }
-  
-  @keyframes moveRandom {
+  @keyframes slideUp3 {
     0% {
-      transform: translateX(0) translateX(100%); /* Start from the bottom */
-    }
-    25% {
-      transform: translateX(30px) translateY(75%); /* Move right and up */
-    }
-    50% {
-      transform: translateX(-50px) translateY(50%); /* Move left and up */
-    }
-    75% {
-      transform: translateX(100px) translateY(25%); /* Move right and up again */
+      top: 1200px;
     }
     100% {
-      transform: translateX(0) translateY(0); /* End at the top */
+      top: 550px;
     }
+  }
+  @keyframes slideUp4 {
+    0% {
+      top: 1200px;
+    }
+    100% {
+      top: 550px;
+    }
+  }
+  @keyframes slideUp5 {
+    0% {
+      top: 1200px;
+    }
+    100% {
+      top: 550px;
+    }
+  }
+  @keyframes slideUp6 {
+    0% {
+      top: 1200px;
+    }
+    100% {
+      top: 620px;
+    }
+  }
+  @keyframes slideUp7 {
+    0% {
+      top: 1200px;
+    }
+    100% {
+      top: 700px;
+    }
+  }
+  
+  .leaf-left,
+  .leaf-right {
+    filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.911))
+      drop-shadow(0 0 5px rgba(0, 200, 0, 0.5))
+      drop-shadow(0 0 7px rgba(50, 170, 72, 0.678));
+  }
+  .stem {
+    filter: drop-shadow(0 0 1px rgba(0, 255, 0, 0.6))
+      drop-shadow(0 0 2px rgba(0, 200, 0, 0.4))
+      drop-shadow(0 0 3px rgba(29, 200, 60, 0.3));
   }
   
   body {
@@ -286,14 +80,13 @@ body {
     top: 0;
     left: 0;
   }
-
+  
   .center-petal {
     position: absolute;
     bottom: -45px;
     left: -25px;
-    /* animation: swaym 2s ease-in-out ; */
   }
-
+  
   .right-petal {
     position: absolute;
     bottom: -50px;
@@ -301,33 +94,34 @@ body {
     transform: scale(1.1);
     animation: swayr 5s ease-in-out infinite;
   }
-
+  
   .left-petal {
     position: absolute;
     bottom: -50px;
     left: 400x;
     animation: swayl 5s ease-in-out infinite;
   }
-
+  
   .stem {
     position: absolute;
     transform: scaley(2);
   }
-
+  
   .leaf-right {
-    animation: swaylleaf 6s ease-in-out infinite;
+    animation: swaylleaf 9s ease-in-out infinite;
     position: absolute;
     left: 60px;
   }
   .leaf-left {
-    animation: swayrleaf 6s ease-in-out infinite;
+    animation: swayrleaf 9s ease-in-out infinite;
     position: absolute;
     left: -80px;
   }
   .container {
-    top: 550px;
+    /* top: 550px; */
     position: relative;
     transform: scale(0.9);
+    
   }
   @keyframes swaym {
     0% {
@@ -358,30 +152,30 @@ body {
     0% {
       transform: scale(1.2) rotate(20deg) translateX(30px);
     }
-
+  
     50% {
       transform: scale(1.2) rotate(-10deg) translateX(-5px);
     }
-
+  
     100% {
       transform: scale(1.2) rotate(20deg) translateX(30px);
     }
   }
-
+  
   @keyframes swaylleaf {
     0% {
       transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
     }
-
+  
     50% {
       transform: scaleX(-1) scale(1.2) rotate(-10deg) translateX(-5px);
     }
-
+  
     100% {
       transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
     }
   }
-
+  
   @keyframes swayl {
     0% {
       transform: rotate(0deg) translateX(0px);
@@ -410,5 +204,213 @@ body {
     position: relative;
     transform: scale(0.9);
   }
-
+  
   /* give each flower a slide up and sway animation na also add glow on each flower according to its color */
+  @keyframes size {
+      0% {
+        transform: 
+         scaleY(1.2) scaleX(1.2);
+        /* Starting position */
+      }
+      100% {
+        transform: 
+         scaleY(1.2) scaleX(1.2);
+        ; /* Ending position */
+      }
+    }
+  
+    @keyframes slideDiagonal {
+      0% {
+        transform: translateY(1000px); /* Starting position */
+      }
+      100% {
+        transform: translateY(0); /* Ending position */
+      }
+    }
+    .diagonal-box {
+      top: -100px;
+      rotate: -10deg;
+      position: relative; /* Optional if not already positioned */
+      animation: slideDiagonal 4s ease-in-out ;
+    }
+    .glowing-star {
+      position: absolute; /* To allow placement within a container */
+      width: 8px; /* Star size */
+      height: 8px; /* Star size */
+      background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%; /* Makes it circular */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Adds the glow */
+      animation: star-glow 2s infinite ease-in-out;
+    }
+    
+    .moving-dots-container {
+      position: relative;
+      background-color: black;
+      overflow: hidden;
+    }
+    
+    .glowing-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      border-radius: 50%;
+      box-shadow: 0 0 10px pink;
+      animation: moveRandom 10s infinite ease-in-out;
+    }
+    
+    @keyframes moveRandom {
+      0% {
+        transform: translateX(0) translateX(100%); /* Start from the bottom */
+      }
+      25% {
+        transform: translateX(30px) translateY(75%); /* Move right and up */
+      }
+      50% {
+        transform: translateX(-50px) translateY(50%); /* Move left and up */
+      }
+      75% {
+        transform: translateX(100px) translateY(25%); /* Move right and up again */
+      }
+      100% {
+        transform: translateX(0) translateY(0); /* End at the top */
+      }
+    }
+    
+    body {
+      background-color: black;
+      overflow: hidden; /* Prevents scrolling */
+      margin: 0; /* Removes default margin */
+      padding: 0; /* Removes default padding */
+      height: 100vh; /* Ensures the body height takes up the full viewport */
+      width: 100vw; /* Ensures the body width takes up the full viewport */
+      position: fixed; /* Fixes the body in place */
+      top: 0;
+      left: 0;
+    }
+  
+    .center-petal {
+      position: absolute;
+      bottom: -45px;
+      left: -25px;
+      /* animation: swaym 2s ease-in-out ; */
+    }
+  
+    .right-petal {
+      position: absolute;
+      bottom: -50px;
+      left: 3px;
+      transform: scale(1.1);
+      animation: swayr 5s ease-in-out infinite;
+    }
+  
+    .left-petal {
+      position: absolute;
+      bottom: -50px;
+      left: 400x;
+      animation: swayl 5s ease-in-out infinite;
+    }
+  
+    .stem {
+      position: absolute;
+      transform: scaley(2);
+    }
+  
+    .leaf-right {
+      animation: swaylleaf 6s ease-in-out infinite;
+      position: absolute;
+      left: 60px;
+    }
+    .leaf-left {
+      animation: swayrleaf 6s ease-in-out infinite;
+      position: absolute;
+      left: -80px;
+    }
+    .container {
+      top: 550px;
+      position: relative;
+      transform: scale(0.9);
+    }
+    @keyframes swaym {
+      0% {
+        transform: rotate(0deg) translateX(0px);
+      }
+      100% {
+        transform: rotate(0deg) translateX(0px);
+      }
+    }
+    @keyframes swayr {
+      0% {
+        transform: rotate(0deg) translateX(0px);
+      }
+      25% {
+        transform: rotate(5deg) translateX(5px);
+      }
+      50% {
+        transform: rotate(-5deg) translateX(0px);
+      }
+      75% {
+        transform: rotate(5deg) translateX(5px);
+      }
+      100% {
+        transform: rotate(0deg) translateX(0px);
+      }
+    }
+    @keyframes swayrleaf {
+      0% {
+        transform: scale(1.2) rotate(20deg) translateX(30px);
+      }
+  
+      50% {
+        transform: scale(1.2) rotate(-10deg) translateX(-5px);
+      }
+  
+      100% {
+        transform: scale(1.2) rotate(20deg) translateX(30px);
+      }
+    }
+  
+    @keyframes swaylleaf {
+      0% {
+        transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
+      }
+  
+      50% {
+        transform: scaleX(-1) scale(1.2) rotate(-10deg) translateX(-5px);
+      }
+  
+      100% {
+        transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
+      }
+    }
+  
+    @keyframes swayl {
+      0% {
+        transform: rotate(0deg) translateX(0px);
+      }
+      25% {
+        transform: rotate(-5deg) translateX(-5px);
+      }
+      50% {
+        transform: rotate(5deg) translateX(0px);
+      }
+      75% {
+        transform: rotate(-5deg) translateX(-5px);
+      }
+      100% {
+        transform: rotate(0deg) translateX(0px);
+      }
+    }
+    .petalDiv {
+      position: relative;
+      top: -60px;
+      z-index: 5;
+    }
+    .flowerbed {
+      top: 100px;
+      left: 15px;
+      position: relative;
+      transform: scale(0.9);
+    }
+  
+}
