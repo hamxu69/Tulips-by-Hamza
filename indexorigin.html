@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flowwers</title>
+    <style>
+      /* General Body Styles */
+      body {
+        background-color: black;
+        overflow: hidden; /* Prevents scrolling */
+        margin: 0; /* Removes default margin */
+        padding: 0; /* Removes default padding */
+        height: 100vh; /* Full viewport height */
+        width: 100vw; /* Full viewport width */
+        position: fixed; /* Fixes the body in place */
+        top: 0;
+        left: 0;
+      }
+      .petalDiv {
+        position: relative;
+      }
+      /* General Petal and Stem Styles */
+      .center-petal,
+      .right-petal,
+      .left-petal,
+      .stem {
+        position: absolute;
+      }
+
+      .leaf-left,
+      .leaf-right {
+        filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.911))
+          drop-shadow(0 0 5px rgba(0, 200, 0, 0.5))
+          drop-shadow(0 0 7px rgba(50, 170, 72, 0.678));
+      }
+
+      .stem {
+        filter: drop-shadow(0 0 1px rgba(0, 255, 0, 0.6))
+          drop-shadow(0 0 2px rgba(0, 200, 0, 0.4))
+          drop-shadow(0 0 3px rgba(29, 200, 60, 0.3));
+        transform: scaleY(2);
+      }
+
+      .leaf-right,
+      .leaf-left {
+        animation-duration: 6s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        position: absolute;
+      }
+
+      /* Petals */
+      .center-petal {
+        bottom: -45px;
+        left: -25px;
+      }
+
+      .right-petal {
+        bottom: -50px;
+        left: 3px;
+        transform: scale(1.1);
+        animation: swayr 5s ease-in-out infinite;
+      }
+
+      .left-petal {
+        bottom: -50px;
+        left: -20px;
+        animation: swayl 5s ease-in-out infinite;
+      }
+
+      /* Leaves */
+      .leaf-right {
+        animation-name: swaylleaf;
+        left: 60px;
+      }
+
+      .leaf-left {
+        animation-name: swayrleaf;
+        left: -80px;
+      }
+
+      /* Keyframes */
+      @keyframes swayr {
+        0%,
+        100% {
+          transform: rotate(0deg) translateX(0px);
+        }
+        25%,
+        75% {
+          transform: rotate(5deg) translateX(5px);
+        }
+        50% {
+          transform: rotate(-5deg) translateX(0px);
+        }
+      }
+
+      @keyframes swayl {
+        0%,
+        100% {
+          transform: rotate(0deg) translateX(0px);
+        }
+        25%,
+        75% {
+          transform: rotate(-5deg) translateX(-5px);
+        }
+        50% {
+          transform: rotate(5deg) translateX(0px);
+        }
+      }
+
+      @keyframes swayrleaf {
+        0%,
+        100% {
+          transform: scale(1.2) rotate(20deg) translateX(30px);
+        }
+        50% {
+          transform: scale(1.2) rotate(-10deg) translateX(-5px);
+        }
+      }
+
+      @keyframes swaylleaf {
+        0%,
+        100% {
+          transform: scaleX(-1) scale(1.2) rotate(20deg) translateX(30px);
+        }
+        50% {
+          transform: scaleX(-1) scale(1.2) rotate(-10deg) translateX(-5px);
+        }
+      }
+/* Ensure the element starts at the bottom of the viewport */
+
+.container {
+  position: absolute; /* Place it relative to the viewport */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  animation: slideUp 1s ease-out forwards; /* Apply animation */
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100vh); /* Start 100% below the viewport height */
+    opacity: 0; /* Optional fade-in effect */
+  }
+  100% {
+    transform: translateY(-30vh); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+/* Add media queries if you need additional device-specific styles */
+@media (min-width: 100px) and (max-width: 400px) {
+    @keyframes slideUp {
+  0% {
+    transform: translateY(100vh); /* Start 100% below the viewport height */
+    opacity: 0; /* Optional fade-in effect */
+  }
+  100% {
+    transform: translateY(-35vh); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+}
+@media (min-width: 401px) and (max-width: 600px){
+    @keyframes slideUp {
+  0% {
+    transform: translateY(100vh); /* Start 100% below the viewport height */
+    opacity: 0; /* Optional fade-in effect */
+  }
+  100% {
+    transform: translateY(-25vh); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+@keyframes slideUp {
+  0% {
+    transform: translateY(100vh); /* Start 100% below the viewport height */
+    opacity: 0; /* Optional fade-in effect */
+  }
+  100% {
+    transform: translateY(-20vh); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+}
+
+@media (min-width: 1201px) {
+  .container {
+    width: 60%;
+    /* Adjustments for larger screens */
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        rotate: -3deg;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+  </body>
+</html>
