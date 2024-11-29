@@ -19,6 +19,8 @@
       }
       .petalDiv {
         position: relative;
+        animation: bloomUp 1s ease-out forwards;
+        
       }
       /* General Petal and Stem Styles */
       .center-petal,
@@ -39,7 +41,7 @@
         filter: drop-shadow(0 0 1px rgba(0, 255, 0, 0.6))
           drop-shadow(0 0 2px rgba(0, 200, 0, 0.4))
           drop-shadow(0 0 3px rgba(29, 200, 60, 0.3));
-        transform: scaleY(2);
+        transform: scaleY(2.5);
       }
 
       .leaf-right,
@@ -137,6 +139,19 @@
   width: 100%; /* Full width */
   animation: slideUp 1s ease-out forwards; /* Apply animation */
 }
+@keyframes bloomUp {
+  0% {
+    transform: translateY(100vh); /* Start 100% below the viewport height */
+    opacity: 0; /* Optional fade-in effect */
+    z-index: 2;
+  }
+  100% {
+    transform: translateY(-15vh); /* Slide to its original position */
+    opacity: 1; /* Fully visible */
+    z-index: 2;
+
+  }
+}
 @keyframes slideUp {
   0% {
     transform: translateY(100vh); /* Start 100% below the viewport height */
@@ -148,61 +163,1164 @@
   }
 }
 /* Add media queries if you need additional device-specific styles */
-@media (min-width: 100px) and (max-width: 400px) {
-    @keyframes slideUp {
-  0% {
-    transform: translateY(100vh); /* Start 100% below the viewport height */
-    opacity: 0; /* Optional fade-in effect */
-  }
-  100% {
-    transform: translateY(-35vh); /* Slide to its original position */
-    opacity: 1; /* Fully visible */
-  }
-}
-
-}
-@media (min-width: 401px) and (max-width: 600px){
-    @keyframes slideUp {
-  0% {
-    transform: translateY(100vh); /* Start 100% below the viewport height */
-    opacity: 0; /* Optional fade-in effect */
-  }
-  100% {
-    transform: translateY(-25vh); /* Slide to its original position */
-    opacity: 1; /* Fully visible */
+@media (min-height: 300px) and (max-height: 800px) {
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100vh) scale(0.7); /* Start 100% below the viewport height */
+      opacity: 0; /* Optional fade-in effect */
+    }
+    100% {
+      transform: translateY(-25vh) scale(0.7); /* Slide to its original position */
+      opacity: 1; /* Fully visible */
+    }
   }
 }
 
-}
-
-@media (min-width: 601px) and (max-width: 1200px) {
-@keyframes slideUp {
-  0% {
-    transform: translateY(100vh); /* Start 100% below the viewport height */
-    opacity: 0; /* Optional fade-in effect */
-  }
-  100% {
-    transform: translateY(-20vh); /* Slide to its original position */
-    opacity: 1; /* Fully visible */
-  }
-}
-
-}
-
-@media (min-width: 1201px) {
-  .container {
-    width: 60%;
-    /* Adjustments for larger screens */
+@media (min-height: 801px)and (max-height: 900px) {
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100vh) scale(0.9); /* Start 100% below the viewport height */
+      opacity: 0; /* Optional fade-in effect */
+    }
+    100% {
+      transform: translateY(-25vh) scale(0.9); /* Slide to its original position */
+      opacity: 1; /* Fully visible */
+    }
   }
 }
+
+@media (min-height: 901px) {
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100vh); /* Start 100% below the viewport height */
+      opacity: 0; /* Optional fade-in effect */
+    }
+    100% {
+      transform: translateY(-20vh); /* Slide to its original position */
+      opacity: 1; /* Fully visible */
+    }
+  }
+}
+
 
     </style>
   </head>
   <body>
+    <!-- top layer -->
+    <div
+    class="container"
+    style="
+    left: -50px;
+    bottom: 200px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: 200px;
+    left: 100px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: 220px;
+    left: 30px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <!-- mid layer -->
+    <div
+    class="container"
+    style="
+    left: -10px;
+    bottom: 110px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: 110px;
+    left: 70px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: 110px;
+    left: 120px;
+    rotate: 6deg;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: 110px;
+    left: -60px;
+    rotate: -6deg;
+
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <!-- lower layer -->
     <div
       class="container"
       style="
-        rotate: -3deg;
         animation: swayl 9s ease-in-out infinite,
           slideUp 3s ease-in-out forwards;
       "
@@ -356,5 +1474,1270 @@
         />
       </svg>
     </div>
+    <div
+      class="container"
+      style="
+      left: 40px;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+    <div
+      class="container"
+      style="
+      left: 100px;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+    <div
+      class="container"
+      style="
+      left: 150px;
+      rotate: 5deg;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+    <div
+      class="container"
+      style="
+      left: -40px;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+    <div
+      class="container"
+      style="
+      left: -80px;
+      rotate: -5deg;
+        animation: swayl 9s ease-in-out infinite,
+          slideUp 3s ease-in-out forwards;
+      "
+    >
+      <div class="petalDiv">
+        <svg
+          class="center-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+          z-index: 1;
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhite70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+            fill="url(#gradientPinkToWhite70)"
+          />
+        </svg>
+
+        <svg
+          class="right-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteRight70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+            fill="url(#gradientPinkToWhiteRight70)"
+          />
+        </svg>
+
+        <svg
+          class="left-petal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 800 800"
+          width="300"
+          height="300"
+          style="
+            filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+              drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+              drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+          "
+        >
+          <defs>
+            <linearGradient
+              id="gradientPinkToWhiteLeft70"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+              <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+            fill="url(#gradientPinkToWhiteLeft70)"
+          />
+        </svg>
+      </div>
+
+      <svg
+        class="stem"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+      >
+        <defs>
+          <linearGradient
+            id="semiTransparentGreen"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+            <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+      <svg
+        class="leaf-left"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+          fill="rgba(92, 230, 92,0.8)"
+        />
+      </svg>
+      <svg
+        class="leaf-right"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="transform: scale(1.3) scaleX(-1)"
+      >
+        <path
+          d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+          fill="rgba(29, 200, 60)"
+        />
+        />
+      </svg>
+    </div>
+    <!-- lowest layer -->
+    <div
+    class="container"
+    style="
+    bottom: -70px;
+    left: -30px;
+    rotate: -3deg;
+
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: -80px;
+    left: 30px;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
+    <div
+    class="container"
+    style="
+    bottom: -70px;
+    left: 100px;
+    rotate: 3deg;
+      animation: swayl 9s ease-in-out infinite,
+        slideUp 3s ease-in-out forwards;
+    "
+  >
+    <div class="petalDiv">
+      <svg
+        class="center-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+        z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhite70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.7)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 484 110 Q 440 33 396 110 Q 286 297 352 484 Q 440 572 539 484 Q 594 297 484 110 Z"
+          fill="url(#gradientPinkToWhite70)"
+        />
+      </svg>
+
+      <svg
+        class="right-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteRight70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 504 462 Q 588 357 504 84 Q 441 84 399 126 Q 294 273 336 462 Q 357 504 420 504 Q 462 504 504 462 Z"
+          fill="url(#gradientPinkToWhiteRight70)"
+        />
+      </svg>
+
+      <svg
+        class="left-petal"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 800"
+        width="300"
+        height="300"
+        style="
+          filter: drop-shadow(0 0 5px rgba(255, 120, 120, 0.5))
+            drop-shadow(0 0 10px rgba(247, 169, 168, 0.5))
+            drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        "
+      >
+        <defs>
+          <linearGradient
+            id="gradientPinkToWhiteLeft70"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="rgba(255, 120, 120, 0.9)" />
+            <stop offset="70%" stop-color="rgba(247, 169, 168, 0.9)" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.8)" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M 296 462 Q 212 357 296 84 Q 359 84 401 126 Q 506 273 464 462 Q 443 504 380 504 Q 338 504 296 462 Z"
+          fill="url(#gradientPinkToWhiteLeft70)"
+        />
+      </svg>
+    </div>
+
+    <svg
+      class="stem"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+    >
+      <defs>
+        <linearGradient
+          id="semiTransparentGreen"
+          x1="0%"
+          y1="0%"
+          x2="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stop-color="rgba(0,455,0,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,255,0,0.5)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M 350 100 C 350 0 400 0 400 100 L 400 450 C 400 600 350 600 350 450 L 350 100"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+    <svg
+      class="leaf-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560  "
+        fill="rgba(92, 230, 92,0.8)"
+      />
+    </svg>
+    <svg
+      class="leaf-right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 800"
+      width="300"
+      height="300"
+      style="transform: scale(1.3) scaleX(-1)"
+    >
+      <path
+        d="M 540 560 Q 400 440 340 160 Q 320 60 280 60 Q 340 60 400 160 Q 520 360 540 560"
+        fill="rgba(29, 200, 60)"
+      />
+      />
+    </svg>
+  </div>
   </body>
 </html>
