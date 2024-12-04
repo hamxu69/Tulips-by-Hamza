@@ -126,13 +126,18 @@
       }
       /* Ensure the element starts at the bottom of the viewport */
 
+      .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      
       .container {
-        position: absolute; /* Place it relative to the viewport */
-        bottom: 0; /* Align to the bottom */
-        left: 0; /* Align to the left */
-        width: 100%; /* Full width */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         animation: slideUp 3s ease-out forwards;
-         /* Apply animation */
       }
       @keyframes sway {
       0% {
