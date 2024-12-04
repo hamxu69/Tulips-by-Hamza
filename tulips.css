@@ -239,4 +239,20 @@
           left: 20px;
         }
       }
-    
+
+      @media (min-width: 500px) {
+        @keyframes slideUp {
+          0% {
+            transform: translateY(100vh) scale(0.7); /* Start 100% below the viewport height */
+            opacity: 0; /* Optional fade-in effect */
+          }
+          100% {
+            transform: translateY(-15vh) scale(0.7); /* Slide to its original position */
+            opacity: 1; /* Fully visible */
+          }
+        }
+        .container {
+          left: 25%;
+          rotate: -3deg;
+        }
+      }
