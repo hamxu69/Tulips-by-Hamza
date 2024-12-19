@@ -48,21 +48,18 @@
 
       /* Petals */
       .center-petal {
-        bottom: -45px;
+        bottom: -65px;
         left: -25px;
       }
 
       .right-petal {
-        bottom: -50px;
+        bottom: -70px;
         left: 3px;
-        transform: scale(1.1);
-        animation: swayr 5s ease-in-out infinite;
       }
 
       .left-petal {
-        bottom: -50px;
+        bottom: -70px;
         left: -20px;
-        animation: swayl 5s ease-in-out infinite;
       }
 
       /* Leaves */
