@@ -1,0 +1,1 @@
+Hi! I just wanted to get used to the shortcuts, so I decided to create something from scratch and make it lengthy. At the time, I wasn’t familiar with JavaScript or frameworks, so I mainly used HTML to make something creative:DD
